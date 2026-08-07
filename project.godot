@@ -27,6 +27,10 @@ window/handheld/orientation=1
 
 enabled=PackedStringArray("res://addons/GDQuest_GDScript_formatter/plugin.cfg")
 
+[gui]
+
+theme/custom="uid://c1kla1fuheqg5"
+
 [input]
 
 tap={
@@ -41,6 +45,7 @@ tap={
 
 2d_physics/layer_1="Player"
 2d_physics/layer_2="Enviroment"
+2d_physics/layer_3="Score"
 
 [physics]
 

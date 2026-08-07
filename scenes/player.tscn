@@ -26,7 +26,7 @@ animations = [{
 radius = 30.066593
 
 [node name="Player" type="RigidBody2D" unique_id=307342213]
-collision_mask = 2
+collision_mask = 6
 gravity_scale = 1.5
 can_sleep = false
 contact_monitor = true
@@ -37,7 +37,7 @@ force_on_tap = 500.0
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=865552095]
 sprite_frames = SubResource("SpriteFrames_bhunq")
 autoplay = "default"
-frame_progress = 0.33302796
+frame_progress = 0.60172296
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2073540099]
 position = Vector2(3, -1)

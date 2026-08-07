@@ -3,13 +3,40 @@
 [ext_resource type="PackedScene" uid="uid://dd2uyn5qny0jq" path="res://scenes/obstacle.tscn" id="1_e3vlw"]
 [ext_resource type="Script" uid="uid://c5vcwce8k8wvd" path="res://scripts/obstacle_pair.gd" id="1_kt73a"]
 
-[node name="ObstaclePair" type="Node2D" unique_id=344350363]
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_bhunq"]
+a = Vector2(0, -6.316)
+b = Vector2(0, 10000000)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_kt73a"]
+a = Vector2(133, 12)
+b = Vector2(133, 1132)
+
+[node name="ObstaclePair" type="Area2D" unique_id=1745320449]
+collision_layer = 4
 script = ExtResource("1_kt73a")
 
-[node name="Obstacle" parent="." unique_id=766184518 instance=ExtResource("1_e3vlw")]
-position = Vector2(0, 1081)
-scale = Vector2(1.8, 1.8)
+[node name="Bottom" parent="." unique_id=766184518 instance=ExtResource("1_e3vlw")]
+position = Vector2(0, 1127)
+scale = Vector2(1.9, 1.9)
 
-[node name="Obstacle2" parent="." unique_id=1033461452 instance=ExtResource("1_e3vlw")]
-position = Vector2(0, -3)
-scale = Vector2(1.8, -1.8)
+[node name="Top" parent="." unique_id=1033461452 instance=ExtResource("1_e3vlw")]
+scale = Vector2(1.9, -1.9)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Top" unique_id=691251964]
+shape = SubResource("SegmentShape2D_bhunq")
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Top" unique_id=1846929471]
+scale = Vector2(0.5263158, -0.5263158)
+remote_path = NodePath("../../CollisionShape2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=911617084]
+shape = SubResource("SegmentShape2D_kt73a")
+debug_color = Color(0.94776565, 1.732707e-06, 0.58386886, 0.41960785)
+
+[node name="Timer" type="Timer" parent="." unique_id=1541410107]
+wait_time = 10.0
+
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="queue_free"]
+
+[editable path="Top"]
