@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://brjr0injhkxs2"]
+
+[ext_resource type="Texture2D" uid="uid://bm6svr1gqep4l" path="res://assets/tappy_plane/PNG/background.png" id="1_k0juu"]
+[ext_resource type="PackedScene" uid="uid://b8nimb5anw8sy" path="res://scenes/player.tscn" id="2_71j4m"]
+[ext_resource type="PackedScene" uid="uid://daup3whagkygu" path="res://scenes/floor.tscn" id="3_qfnet"]
+[ext_resource type="PackedScene" uid="uid://bvm7d85w75dst" path="res://scenes/obstacle_pair.tscn" id="4_i7141"]
+
+[node name="World" type="Node2D" unique_id=1966478873]
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=70455985]
+autoscroll = Vector2(100, 0)
+
+[node name="Sprite" type="Sprite2D" parent="Parallax2D" unique_id=518944460]
+scale = Vector2(2.4, 2.25)
+texture = ExtResource("1_k0juu")
+centered = false
+
+[node name="Player" parent="." unique_id=307342213 instance=ExtResource("2_71j4m")]
+position = Vector2(272, 544)
+
+[node name="Floor" parent="." unique_id=1838703133 instance=ExtResource("3_qfnet")]
+position = Vector2(16, 1080)
+
+[node name="ObstaclePair" parent="." unique_id=344350363 instance=ExtResource("4_i7141")]
+position = Vector2(361, 4)
+scale = Vector2(1.0784581, 1)

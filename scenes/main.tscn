@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://d1uqtum4t7uku"]
+
+[ext_resource type="Script" uid="uid://0602mk2fgl48" path="res://scripts/main.gd" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://brjr0injhkxs2" path="res://scenes/world.tscn" id="2_0wfyh"]
+
+[node name="Main" type="Node" unique_id=1421043372]
+script = ExtResource("1_o5qli")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=479793381]
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -400.0
+offset_right = 400.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=964142306]
+disable_3d = true
+handle_input_locally = false
+audio_listener_enable_2d = true
+audio_listener_enable_3d = true
+physics_object_picking = true
+size = Vector2i(800, 1080)
+size_2d_override_stretch = true
+render_target_update_mode = 4
+
+[node name="World" parent="SubViewportContainer/SubViewport" unique_id=1966478873 instance=ExtResource("2_0wfyh")]
