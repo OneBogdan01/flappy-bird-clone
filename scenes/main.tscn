@@ -12,12 +12,10 @@ script = ExtResource("1_o5qli")
 obstacle_spawner = NodePath("SubViewportContainer/SubViewport/World/ObstacleSpawner")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=479793381]
-anchors_preset = 13
-anchor_left = 0.5
-anchor_right = 0.5
+custom_maximum_size = Vector2(720, -1)
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -431.0
-offset_right = 431.0
 grow_horizontal = 2
 grow_vertical = 2
 stretch = true
@@ -28,7 +26,7 @@ handle_input_locally = false
 audio_listener_enable_2d = true
 audio_listener_enable_3d = true
 physics_object_picking = true
-size = Vector2i(862, 1280)
+size = Vector2i(720, 1080)
 render_target_update_mode = 4
 
 [node name="World" parent="SubViewportContainer/SubViewport" unique_id=1966478873 instance=ExtResource("2_0wfyh")]
@@ -69,8 +67,7 @@ vertical_alignment = 1
 script = ExtResource("3_sugp2")
 
 [node name="IntroScreen" parent="." unique_id=1455413948 instance=ExtResource("4_tbgi4")]
-offset_left = 531.0
-offset_right = -531.0
+custom_maximum_size = Vector2(720, -1)
 mouse_filter = 2
 script = ExtResource("5_tefeu")
 offset_position = Vector2(0, 25)
@@ -88,8 +85,7 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -340.0
-offset_right = -4.0
+offset_left = -336.0
 offset_bottom = 103.0
 grow_horizontal = 0
 theme_override_font_sizes/font_size = 32
@@ -134,31 +130,19 @@ text = "Tappy
 The fake bird"
 horizontal_alignment = 1
 vertical_alignment = 1
-autowrap_mode = 3
 
 [node name="GameOverMenu" parent="." unique_id=1483635232 instance=ExtResource("4_jyhfs")]
 unique_name_in_owner = true
 visible = false
-offset_left = 510.0
-offset_right = -517.0
 
-[node name="ScoreContainers" parent="GameOverMenu" index="0" unique_id=760462249]
-offset_left = 18.5
-offset_right = -12.0
-
-[node name="ScorePanel" parent="GameOverMenu" index="2" unique_id=1956653196]
-layout_mode = 1
+[node name="ScorePanel" parent="GameOverMenu" index="1" unique_id=1956653196]
 anchors_preset = 8
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -525.5
-offset_top = -152.0
-offset_right = 591.5
-offset_bottom = 225.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_left = -438.0
+offset_top = -62.0
+offset_right = 282.0
+offset_bottom = 315.0
 
 [node name="MarginContainer" parent="GameOverMenu/ScorePanel" index="0" unique_id=2080587600]
 theme_override_constants/margin_left = 133

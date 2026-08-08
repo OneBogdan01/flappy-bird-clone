@@ -2,12 +2,13 @@
 
 [ext_resource type="Script" uid="uid://dkfphfssxyjeh" path="res://scripts/game_over.gd" id="1_xeevv"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_riqys"]
-
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xeevv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_riqys"]
 
 [node name="GameOverMenu" type="Control" unique_id=1483635232]
 process_mode = 3
+custom_maximum_size = Vector2(720, -1)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,8 +18,8 @@ grow_vertical = 2
 script = ExtResource("1_xeevv")
 
 [node name="ScoreContainers" type="PanelContainer" parent="." unique_id=760462249]
-self_modulate = Color(0, 0, 0, 0.19215687)
-clip_contents = true
+self_modulate = Color(0, 0, 0, 0.43137255)
+custom_maximum_size = Vector2(720, -1)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -38,6 +39,62 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.897973, 0.16003764, 0.18809664, 1)
 theme_override_font_sizes/font_size = 128
 text = "Game Over"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="ScorePanel" type="PanelContainer" parent="." unique_id=1956653196]
+custom_maximum_size = Vector2(720, -1)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -70.0
+offset_bottom = 240.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_xeevv")
+
+[node name="MarginContainer" type="MarginContainer" parent="ScorePanel" unique_id=2080587600]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 18
+
+[node name="Scores" type="GridContainer" parent="ScorePanel/MarginContainer" unique_id=173450783]
+layout_mode = 2
+theme_override_constants/h_separation = 224
+theme_override_constants/v_separation = 100
+columns = 2
+
+[node name="Score" type="Label" parent="ScorePanel/MarginContainer/Scores" unique_id=1408749406]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9254902, 0.8156863, 0.3882353, 1)
+theme_override_font_sizes/font_size = 44
+text = "Score"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HighScore" type="Label" parent="ScorePanel/MarginContainer/Scores" unique_id=1839128011]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9254902, 0.8156863, 0.3882353, 1)
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/font_size = 44
+text = "High Score"
+horizontal_alignment = 1
+
+[node name="ScoreNumber" type="Label" parent="ScorePanel/MarginContainer/Scores" unique_id=2050266896]
+unique_name_in_owner = true
+layout_mode = 2
+text = "12"
+horizontal_alignment = 1
+
+[node name="HighScoreNumber" type="Label" parent="ScorePanel/MarginContainer/Scores" unique_id=2110510637]
+unique_name_in_owner = true
+layout_mode = 2
+text = "213"
+horizontal_alignment = 1
 
 [node name="ButtonContainer" type="PanelContainer" parent="." unique_id=1902598959]
 layout_mode = 1
@@ -70,46 +127,3 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "Quit
 "
-
-[node name="ScorePanel" type="PanelContainer" parent="." unique_id=1956653196]
-layout_mode = 0
-offset_left = 446.0
-offset_top = 389.0
-offset_right = 1474.0
-offset_bottom = 750.0
-theme_override_styles/panel = SubResource("StyleBoxEmpty_xeevv")
-
-[node name="MarginContainer" type="MarginContainer" parent="ScorePanel" unique_id=2080587600]
-layout_mode = 2
-theme_override_constants/margin_left = 100
-theme_override_constants/margin_right = 180
-theme_override_constants/margin_bottom = 18
-
-[node name="Scores" type="GridContainer" parent="ScorePanel/MarginContainer" unique_id=173450783]
-layout_mode = 2
-theme_override_constants/h_separation = 132
-theme_override_constants/v_separation = 100
-columns = 2
-
-[node name="Score" type="Label" parent="ScorePanel/MarginContainer/Scores" unique_id=1408749406]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.9254902, 0.8156863, 0.3882353, 1)
-text = "Score"
-
-[node name="HighScore" type="Label" parent="ScorePanel/MarginContainer/Scores" unique_id=1839128011]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.9254902, 0.8156863, 0.3882353, 1)
-theme_override_constants/outline_size = 12
-text = "High Score"
-
-[node name="ScoreNumber" type="Label" parent="ScorePanel/MarginContainer/Scores" unique_id=2050266896]
-unique_name_in_owner = true
-layout_mode = 2
-text = "12"
-horizontal_alignment = 1
-
-[node name="HighScoreNumber" type="Label" parent="ScorePanel/MarginContainer/Scores" unique_id=2110510637]
-unique_name_in_owner = true
-layout_mode = 2
-text = "213"
-horizontal_alignment = 1
