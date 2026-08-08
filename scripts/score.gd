@@ -1,3 +1,4 @@
+class_name Score
 extends Label
 
 var current_score := 0:

@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dd2uyn5qny0jq" path="res://scenes/obstacle.tscn" id="1_e3vlw"]
 [ext_resource type="Script" uid="uid://c5vcwce8k8wvd" path="res://scripts/obstacle_pair.gd" id="1_kt73a"]
+[ext_resource type="AudioStream" uid="uid://cfr1sbuam0y03" path="res://assets/impact_sounds/Audio/impactMetal_heavy_001.ogg" id="3_lqpsc"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_bhunq"]
 a = Vector2(0, -6.316)
@@ -10,6 +11,11 @@ b = Vector2(0, 10000000)
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_kt73a"]
 a = Vector2(133, 12)
 b = Vector2(133, 1132)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_bhunq"]
+random_pitch = 1.2599211
+streams_count = 1
+stream_0/stream = ExtResource("3_lqpsc")
 
 [node name="ObstaclePair" type="Area2D" unique_id=1745320449]
 collision_layer = 4
@@ -36,7 +42,11 @@ debug_color = Color(0.94776565, 1.732707e-06, 0.58386886, 0.41960785)
 [node name="Timer" type="Timer" parent="." unique_id=1541410107]
 wait_time = 10.0
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=104442619]
+stream = SubResource("AudioStreamRandomizer_bhunq")
+
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="score_triggered" from="." to="AudioStreamPlayer" method="play"]
 [connection signal="timeout" from="Timer" to="." method="queue_free"]
 
 [editable path="Top"]

@@ -2,8 +2,18 @@ class_name ObstacleSpawner
 extends Node2D
 
 @export var node_to_spawn: PackedScene
+@onready var timer: Timer = $Timer
 
 signal score_triggered
+
+
+func start():
+	spawn()
+	timer.start()
+
+
+func stop():
+	process_mode = Node.PROCESS_MODE_DISABLED
 
 
 func spawn():
@@ -14,10 +24,6 @@ func spawn():
 
 func _score_triggered():
 	score_triggered.emit()
-
-
-func _ready() -> void:
-	spawn()
 
 
 func _on_timer_timeout() -> void:

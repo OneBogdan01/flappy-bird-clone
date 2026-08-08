@@ -9,6 +9,5 @@ node_to_spawn = ExtResource("2_ra2ui")
 
 [node name="Timer" type="Timer" parent="." unique_id=1722868276]
 wait_time = 2.0
-autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

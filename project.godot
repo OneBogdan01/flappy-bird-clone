@@ -13,7 +13,13 @@ config_version=5
 config/name="Flappy Bird"
 run/main_scene="uid://d1uqtum4t7uku"
 config/features=PackedStringArray("4.7", "GL Compatibility")
+run/max_fps=60
 config/icon="res://icon.svg"
+
+[autoload]
+
+LevelManager="*uid://bo1jkv47dwyu8"
+SaveManager="*uid://ittorai26fpj"
 
 [display]
 
