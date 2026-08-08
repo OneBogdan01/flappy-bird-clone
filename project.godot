@@ -26,9 +26,7 @@ SaveManager="*uid://ittorai26fpj"
 
 window/size/viewport_width=720
 window/size/viewport_height=1080
-window/size/resizable=false
 window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
 window/handheld/orientation=1
 
 [editor_plugins]
