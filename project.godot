@@ -10,7 +10,8 @@ config_version=5
 
 [application]
 
-config/name="Flappy Bird"
+config/name="Tappy The Fake Bird"
+config/description="A fally bird clone."
 run/main_scene="uid://d1uqtum4t7uku"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 run/max_fps=60
