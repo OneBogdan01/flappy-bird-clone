@@ -10,7 +10,8 @@ config_version=5
 
 [application]
 
-config/name="Flappy Bird"
+config/name="Tappy The Fake Bird"
+config/description="A fally bird clone."
 run/main_scene="uid://d1uqtum4t7uku"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 run/max_fps=60
@@ -23,10 +24,11 @@ SaveManager="*uid://ittorai26fpj"
 
 [display]
 
-window/size/viewport_width=1920
+window/size/viewport_width=720
 window/size/viewport_height=1080
 window/size/resizable=false
 window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 window/handheld/orientation=1
 
 [editor_plugins]
